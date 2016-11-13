@@ -31,7 +31,9 @@ In your own words, define what the responsibilities of the model layer are in
 Rails.
 
 ```md
-<!-- your answer here -->
+The model layer talks to the database, stores and validates data, and performs the business logic. It retrieves the resource being requested from the controller.
+
+https://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/
 ```
 
 ## Define Controller Responsiblities
@@ -40,7 +42,10 @@ In your own words, define what the responsibilities of the controller layer are
 in Rails.
 
 ```md
-<!-- your answer here -->
+Th controller layer parses user requests, data submissions, cookies, sessions and associated “browser stuff”, calls the model layer's methods, and then passes the output of those methods to view along with response body and metadata and send it back to the web server.
+
+https://betterexplained.com/articles/intermediate-rails-understanding-models-views-and-controllers/
+http://guides.rubyonrails.org/action_controller_overview.html
 ```
 
 ## Define Router Responsiblities
@@ -48,7 +53,9 @@ in Rails.
 In your own words, define what the router does in Rails.
 
 ```md
-<!-- your answer here -->
+The router recognizes URLs and dispatches them to a controller's action. It can also generate paths and URLs, avoiding the need to hardcode strings in your views.
+
+http://guides.rubyonrails.org/routing.html
 ```
 
 ## The Request-Response Cycle in Rails
@@ -57,5 +64,6 @@ Starting with a client making a GET request to a particular URL, describe how
 the parts of Rails interact to produce and send a response.
 
 ```md
-<!-- your answer here -->
+The browser sends a GET request to the web server which uses routes to figure out which controller to use. The controller parses the request and asks the model to get the requested resource. The model then communicates with the database and performs the business logic to retrieve that resource and sends it back to the controller. The controller then sends the resource to the view which generates whatever it is the user
+should see based on the resource (using HTML, CSS, XML, Javascript, JSON) and then passes it back to the controller. The controller then sends the response body and metadata to the web server which turns it into a valid HTTP response to the user.
 ```
